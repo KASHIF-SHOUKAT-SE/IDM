@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "IDM Style Downloader",
+  "version": "1.0",
+  "description": "An IDM-style extension for managing and capturing downloads.",
+  "permissions": [
+    "downloads",
+    "storage",
+    "activeTab",
+    "contextMenus"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

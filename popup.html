@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IDM Style Downloader</title>
+  <style>
+    body {
+      width: 400px;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    .header {
+      background-color: #0056b3;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .toolbar {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      padding: 5px 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .toolbar button {
+      background: none;
+      border: 1px solid transparent;
+      padding: 5px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 10px;
+      transition: background 0.2s;
+    }
+    .toolbar button:hover {
+      background-color: #e9ecef;
+      border-color: #dee2e6;
+    }
+    .icon-placeholder {
+      width: 24px;
+      height: 24px;
+      background-color: #6c757d;
+      margin-bottom: 2px;
+      border-radius: 3px;
+    }
+    .content {
+      height: 300px;
+      overflow-y: auto;
+      background-color: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th {
+      text-align: left;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+      padding: 8px;
+      position: sticky;
+      top: 0;
+    }
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+    tr:hover {
+      background-color: #f1f3f5;
+    }
+    .download-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+    .download-btn:hover {
+      background-color: #218838;
+    }
+    .empty-state {
+      padding: 40px;
+      text-align: center;
+      color: #888;
+    }
+    .footer {
+      padding: 8px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ccc;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>IDM Style Downloader</h1>
+  </div>
+  <div class="toolbar">
+    <button id="refresh-btn">
+      <div class="icon-placeholder"></div>
+      Refresh
+    </button>
+    <button id="clear-btn">
+      <div class="icon-placeholder"></div>
+      Clear
+    </button>
+    <button id="options-btn">
+      <div class="icon-placeholder"></div>
+      Options
+    </button>
+  </div>
+  <div class="content">
+    <table id="media-table">
+      <thead>
+        <tr>
+          <th>File Name / URL</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="media-list">
+        <!-- Media items will be injected here -->
+      </tbody>
+    </table>
+    <div id="empty-msg" class="empty-state">
+      No media detected on this page.
+    </div>
+  </div>
+  <div class="footer">
+    <span id="status-text">Ready</span>
+    <span>v1.0</span>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

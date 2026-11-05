@@ -1,0 +1,16 @@
+/* Styles for injected elements (if any) */
+.idm-floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  display: none; /* Hidden by default, shown when media detected */
+}
